@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Задание 2</title>
+</head>
+
+<body>
+	<div>
+		<p>Загрузил файлы задания на сервер и сделал их доступным для чтения.</p>
+		<img src="img/1.png" alt="image1">
+	</div>
+	<div>
+		<p>Подключаюсь через PuTTY, используя <strong>Raw</strong> по адресу <strong>212.192.134.20</strong> с
+			портом <strong>80</strong>.</p>
+		<img src="img/2.png" alt="image2">
+	</div>
+	<div>
+		<h2>1</h2>
+		<p>Получаю главную страницу методом <strong>GET</strong> в протоколе <strong>HTTP 1.0</strong>. По умолчанию
+			главная страница - это файл с названием <strong>index</strong>.</p>
+		<img src="img/3.png" alt="image3">
+	</div>
+	<div>
+		<h2>2</h2>
+		<p>Получаю внутреннюю страницу методом <strong>GET</strong> в протоколе <strong>HTTP 1.1</strong>. По умолчанию
+			возвращет файл с названием <strong>index</strong>. Сервер вернул файл
+			<strong>index.php</strong>. Для <strong>HTTP 1.1</strong> появился заголовок <strong>Host</strong>.
+		</p>
+		<img src="img/4.png" alt="image4">
+	</div>
+	<div>
+		<h2>3</h2>
+		<p>Чтобы получить информацию о файле (метаданные) использую метод <strong>HEAD</strong>, который не возвращает
+			тело объекта. В данном случае нас интересует размер, смотрим на строчку <strong>Content-Length</strong>.
+			Размер файла измеряется в байтах. В нашем случае размер файла <strong>file.tar.gz</strong> равен
+			<strong>11335 Байтам</strong>.
+		</p>
+		<img src="img/5.png" alt="image5">
+	</div>
+	<div>
+		<h2>4</h2>
+		<p>Медиа тип (так же известный как <strong> Internet Mail Extensions</strong> или <strong>MIME</strong> тип)
+			является
+			стандартом,
+			который описывает природу и формат документа, файла или набора байтов. Аналогично предыдущему скриншоту,
+			обращаюсь к файлу image.png
+			В данном случае нас интересует медиатип, смотрим на строчку <strong>Content-Type</strong>. Медиатип ресурса:
+			<strong>image/png</strong>
+		</p>
+		<img src="img/6.png" alt="image6">
+	</div>
+	<div>
+		<h2>5</h2>
+		<p>HTTP-метод <strong>POST</strong> предназначен для отправки данных на сервер. Тип тела запроса указывается в
+			заголовке
+			<strong>Content-Type</strong>. Запрос <strong>POST</strong> обычно отправляется через форму HTML и приводит
+			к изменению на
+			сервере.
+			Веб-браузер отправляет POST-запрос с элементами веб-формы, по умолчанию интернет-тип данных медиа —
+			<strong>application/x-www-form-urlencoded</strong>. В таком случае, значения кодируются в кортежах с ключом,
+			разделённых символом <strong>'&'</strong>, с <strong>'='</strong> между ключом и значением. Пример с двумя
+			значениями: <strong>say=Hi&to=Mom</strong>
+		</p>
+		<img src="img/7.png" alt="image7">
+	</div>
+	<div>
+		<h2>6</h2>
+		<p>Чтобы получить часть файла, использую заголовок <strong>Range</strong>. Заголовок позволяет запросить сразу
+			несколько частей файла. Если сервер поддерживает отправку по частям, то код ответа будет: <strong>206
+				Partial Content</strong>. Иначе, файл будет отправлен целиком с кодом
+			<strong>200</strong>. Заголовок ответа <strong>Accept-Ranges</strong> это маркер, который использует сервер,
+			чтобы уведомить клиента о поддержке "запросов по кускам". Его значение указывает единицу измерения. Также
+			браузер может попытаться возобновить прерванную загрузку, а не запускать её с самого начала.
+		</p>
+		<img src="img/8.png" alt="image8">
+	</div>
+	<div>
+		<h2>7</h2>
+		<p>
+			Использую метод <strong>HEAD</strong>. В данном случае нас интересует кодировка, смотрим на строчку
+			<strong>Content-Type</strong>, кодировка ресурса <strong>index.php</strong>: <strong>UTF-8</strong>.
+		</p>
+		<img src="img/9.png" alt="image9">
+	</div>
+</body>
+
+</html>
